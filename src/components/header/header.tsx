@@ -1,10 +1,13 @@
-import React from 'react';
+type HeaderProps = {
+    todoCount: number,
+    doneCount: number,
+}
 
-function Header():JSX.Element {
+function Header({todoCount, doneCount}: HeaderProps):JSX.Element {
     return (
         <div className="header">
             <h1 className="header__title">ToDo List APP</h1>
-            <p className="header__info">1 to do, 2 done</p>
+            <p className="header__info">{todoCount} to do, {doneCount} done</p>
         </div>
     );
 }
