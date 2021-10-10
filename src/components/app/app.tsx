@@ -15,7 +15,7 @@ function App():JSX.Element {
             <Header todoCount={todoCount} doneCount={doneCount} />
             <SearchPanel />
             <StatusFilter />
-            <TodoList />
+            <TodoList todos={todos}/>
             <AddItem />
         </div>
     );

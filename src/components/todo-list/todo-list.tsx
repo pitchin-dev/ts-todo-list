@@ -1,11 +1,19 @@
-import React from 'react';
+import TodoListItem from '../todo-list-item/todo-list-item';
 
-function TodoList():JSX.Element {
+type TodoListProps = {
+    todos: {
+        id: number,
+        label: string,
+        isImportant: boolean,
+        isDone: boolean,
+    }[],
+}
+
+function TodoList({todos}: TodoListProps):JSX.Element {
+    const items = todos.map((todoItem) => <TodoListItem todoItem={todoItem} />)
     return (
         <ul className="todo-list">
-            <li className="todo-list-item">Item 1</li>
-            <li className="todo-list-item">Item 2</li>
-            <li className="todo-list-item">Item 3</li>
+            {items}
         </ul>
     );
 }
